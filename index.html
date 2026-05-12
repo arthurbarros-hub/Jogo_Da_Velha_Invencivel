@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jogo da Velha invencível com IA Minimax e Poda Alpha-Beta." />
+  <meta name="keywords" content="jogo da velha, tic-tac-toe, minimax, alpha-beta, javascript" />
+  <meta name="author" content="Jogo da Velha Invencível" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Jogo da Velha Invencível</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" role="banner" aria-label="Cabeçalho do jogo">
+    <div class="brand">
+      <h1>Jogo da Velha Invencível</h1>
+      <p>Desafie a IA com Minimax + Alpha-Beta</p>
+    </div>
+    <div class="theme-toggle" role="group" aria-label="Alternar tema">
+      <span class="theme-label" aria-hidden="true">Tema</span>
+      <label class="switch" for="themeToggle" aria-label="Alternar modo escuro">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+
+  <main class="app" role="main">
+    <section class="panel" aria-labelledby="choiceTitle">
+      <h2 id="choiceTitle">Escolha seu símbolo</h2>
+      <div class="choice" role="radiogroup" aria-label="Escolha de símbolo">
+        <button class="choice-btn" data-symbol="X" type="button" aria-pressed="false">X</button>
+        <button class="choice-btn" data-symbol="O" type="button" aria-pressed="false">O</button>
+      </div>
+      <p class="helper">Quem escolhe X começa a partida.</p>
+    </section>
+
+    <section class="board-section" aria-labelledby="boardTitle">
+      <h2 id="boardTitle">Tabuleiro</h2>
+      <div class="board" role="grid" aria-label="Tabuleiro 3 por 3">
+        <button class="cell" data-index="0" role="gridcell" aria-label="Célula 1" type="button"></button>
+        <button class="cell" data-index="1" role="gridcell" aria-label="Célula 2" type="button"></button>
+        <button class="cell" data-index="2" role="gridcell" aria-label="Célula 3" type="button"></button>
+        <button class="cell" data-index="3" role="gridcell" aria-label="Célula 4" type="button"></button>
+        <button class="cell" data-index="4" role="gridcell" aria-label="Célula 5" type="button"></button>
+        <button class="cell" data-index="5" role="gridcell" aria-label="Célula 6" type="button"></button>
+        <button class="cell" data-index="6" role="gridcell" aria-label="Célula 7" type="button"></button>
+        <button class="cell" data-index="7" role="gridcell" aria-label="Célula 8" type="button"></button>
+        <button class="cell" data-index="8" role="gridcell" aria-label="Célula 9" type="button"></button>
+      </div>
+      <div class="status" role="status" aria-live="polite" aria-atomic="true"></div>
+    </section>
+
+    <section class="scoreboard" aria-labelledby="scoreTitle">
+      <h2 id="scoreTitle">Placar</h2>
+      <div class="score-grid">
+        <div class="score-card">
+          <span>Você</span>
+          <strong id="playerScore">0</strong>
+        </div>
+        <div class="score-card">
+          <span>IA</span>
+          <strong id="aiScore">0</strong>
+        </div>
+        <div class="score-card">
+          <span>Empates</span>
+          <strong id="drawScore">0</strong>
+        </div>
+      </div>
+      <div class="actions" role="group" aria-label="Ações do jogo">
+        <button id="newGame" class="primary" type="button">Nova Partida</button>
+        <button id="resetScore" class="ghost" type="button">Resetar Placar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer" role="contentinfo">
+    <p>IA determinística com Minimax e Poda Alpha-Beta.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
